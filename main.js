@@ -1,12 +1,11 @@
-//faz a leitura dos acertos na determinada questão
+//Grava nas variaveis os valores dos acertos das questoes, caso não tenha respondido ele salva o valor como 0;
 var T1 = parseFloat(localStorage.getItem("T1") || "0");
 var T2 = parseFloat(localStorage.getItem("T2") || "0");
-
+//Mostra nos elementos a porcentagem de acertos
 document.getElementById("T1").innerHTML = T1 + "%";
 document.getElementById("T2").innerHTML = T2 + "%";
-
+//funcao pra gerar graficos
 window.onload = function () {
-
     var options = {
         animationEnabled: true,
         title: {
@@ -17,7 +16,7 @@ window.onload = function () {
         },
         data: [
             {
-                // Change type to "doughnut", "line", "splineArea", etc.
+                // Adicionar as colunas dos temas de matematica
                 type: "column",
                 dataPoints: [
                     { label: "T1", y: T1 },
